@@ -1,0 +1,14 @@
+// Cloudflare Workers static-assets config for the landing page.
+// Connected to Cloudflare Workers Builds: every push to main auto-deploys.
+// Manual deploy: npx wrangler deploy (Terminal, repo root).
+// Same pattern as WindDown and Warraya. No build step; landing/ is plain HTML/CSS.
+{
+  "$schema": "https://unpkg.com/wrangler/config-schema.json",
+  "name": "lazychef",
+  "compatibility_date": "2026-07-09",
+  "assets": {
+    "directory": "./landing",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}
