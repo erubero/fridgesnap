@@ -1,0 +1,7 @@
+// Committed build config. Pulls in the gitignored Secrets.xcconfig when it
+// exists; builds still work without it (empty keys, mock services in DEBUG).
+REVENUECAT_API_KEY =
+SUPABASE_URL =
+SUPABASE_ANON_KEY =
+
+#include? "Secrets.xcconfig"
