@@ -12,7 +12,7 @@ final class ScanFlowModel {
         case detail(Recipe)
     }
 
-    private let services: AppServices
+    let services: AppServices
 
     var path = NavigationPath()
     var photos: [UIImage] = []
@@ -59,6 +59,7 @@ final class ScanFlowModel {
             scanID = response.scanID
             editor = IngredientEditor(ingredients: response.ingredients, scanDate: .now)
             generationCount = 0
+            services.analytics.log(AnalyticsEvent.scanCompleted, props: ["ingredient_count": "\(response.ingredients.count)"])
             path.append(Route.review)
         } catch ServiceError.freeLimitReached {
             freeLimitHit = true
@@ -85,6 +86,28 @@ final class ScanFlowModel {
         path.append(Route.levelSelect)
     }
 
+    func removeIngredient(named name: String) {
+        editor.remove(named: name)
+        services.analytics.log(AnalyticsEvent.ingredientsEdited, props: ["action": "remove"])
+    }
+
+    func confirmIngredient(named name: String) {
+        editor.confirm(named: name)
+        services.analytics.log(AnalyticsEvent.ingredientsEdited, props: ["action": "confirm"])
+    }
+
+    func addIngredient(name: String) {
+        let before = editor.ingredients.count
+        editor.add(name: name)
+        guard editor.ingredients.count != before else { return }
+        services.analytics.log(AnalyticsEvent.ingredientsEdited, props: ["action": "add"])
+    }
+
+    func selectLevel(_ level: LazinessLevel) {
+        selectedLevel = level
+        services.analytics.log(AnalyticsEvent.levelSelected, props: ["level": level.rawValue])
+    }
+
     func generate(regenerate: Bool = false) async {
         guard let scanID, !isGenerating else { return }
         isGenerating = true
@@ -98,6 +121,10 @@ final class ScanFlowModel {
                 servings: servings
             )
             generationCount += 1
+            services.analytics.log(
+                regenerate ? AnalyticsEvent.recipeRegenerated : AnalyticsEvent.recipeGenerated,
+                props: ["level": selectedLevel.rawValue, "servings": "\(servings)"]
+            )
             if !regenerate {
                 path.append(Route.results)
             }

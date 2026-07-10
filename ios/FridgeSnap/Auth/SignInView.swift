@@ -1,15 +1,13 @@
-import AuthenticationServices
 import CryptoKit
 import SwiftUI
 
-// Sign in with Apple gate, shown only when the real backend is configured
-// and there is no session. The raw nonce goes to Supabase, its SHA-256 hash
-// to Apple (spec section 5; same contract as MyPursefolio).
+// Sign-in fallback shown when onboarding is already complete but there is no
+// session (e.g. the user signed out from Settings). First-run account
+// creation happens inside OnboardingView instead. Nonce helpers are namespaced
+// here and reused by AppleSignInButton (spec section 5; same contract as
+// MyPursefolio).
 struct SignInView: View {
     let auth: AuthServicing
-    @State private var rawNonce = SignInView.randomNonce()
-    @State private var errorMessage: String?
-    @State private var isWorking = false
 
     var body: some View {
         VStack(spacing: 24) {
@@ -25,57 +23,10 @@ struct SignInView: View {
                 .padding(.horizontal, 40)
             Spacer()
 
-            SignInWithAppleButton(.signIn) { request in
-                request.requestedScopes = [.email]
-                request.nonce = Self.sha256(rawNonce)
-            } onCompletion: { result in
-                handle(result)
-            }
-            .frame(height: 52)
-            .padding(.horizontal, 32)
-            .disabled(isWorking)
+            AppleSignInButton(auth: auth, onSuccess: {})
+                .padding(.horizontal, 32)
 
-            if isWorking {
-                ProgressView()
-            }
-            if let errorMessage {
-                Text(errorMessage)
-                    .font(.caption)
-                    .foregroundStyle(.red)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 32)
-            }
             Spacer().frame(height: 40)
-        }
-    }
-
-    private func handle(_ result: Result<ASAuthorization, Error>) {
-        switch result {
-        case .success(let authorization):
-            guard
-                let credential = authorization.credential as? ASAuthorizationAppleIDCredential,
-                let tokenData = credential.identityToken,
-                let token = String(data: tokenData, encoding: .utf8)
-            else {
-                errorMessage = "Apple did not return a valid credential. Please try again."
-                rawNonce = Self.randomNonce()
-                return
-            }
-            isWorking = true
-            let nonce = rawNonce
-            Task {
-                do {
-                    try await auth.signIn(appleIDToken: token, rawNonce: nonce)
-                } catch {
-                    errorMessage = error.localizedDescription
-                    rawNonce = Self.randomNonce()
-                }
-                isWorking = false
-            }
-        case .failure:
-            // The user cancelled or the sheet failed; a fresh nonce keeps
-            // the next attempt valid.
-            rawNonce = Self.randomNonce()
         }
     }
 

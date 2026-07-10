@@ -10,6 +10,8 @@ final class AppServices {
     let auth: AuthServicing
     let scan: ScanServicing
     let generation: GenerationServicing
+    let analytics: AnalyticsServicing
+    let profile: ProfileServicing
     let isUsingMocks: Bool
 
     init() {
@@ -18,11 +20,15 @@ final class AppServices {
             auth = SupabaseAuthService(client: client)
             scan = SupabaseScanService(client: client)
             generation = SupabaseGenerationService(client: client)
+            analytics = SupabaseAnalyticsService(client: client)
+            profile = SupabaseProfileService(client: client)
             isUsingMocks = false
         } else {
             auth = MockAuthService()
             scan = MockScanService()
             generation = MockGenerationService()
+            analytics = MockAnalyticsService()
+            profile = MockProfileService()
             isUsingMocks = true
         }
     }

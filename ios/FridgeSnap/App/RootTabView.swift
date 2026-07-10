@@ -1,11 +1,15 @@
 import SwiftUI
 
 // Tab bar per spec section 6: Scan (primary), My Recipes, Community, Settings.
-// My Recipes lands in M3, Community in M5, Settings in M6.
+// Community lands in M5, Settings in M6.
 struct RootTabView: View {
     let services: AppServices
     @State private var scanFlow: ScanFlowModel
     @State private var checkedSession = false
+    // First-run onboarding (welcome, quiz, account creation, dietary prefs,
+    // staples, trial) owns the initial sign-in; SignInView below is only the
+    // fallback for a later sign-out.
+    @AppStorage("fridgesnap.hasCompletedOnboarding") private var hasCompletedOnboarding = false
 
     init(services: AppServices) {
         self.services = services
@@ -20,6 +24,10 @@ struct RootTabView: View {
                         await services.auth.restoreSession()
                         checkedSession = true
                     }
+            } else if !hasCompletedOnboarding {
+                OnboardingView(services: services) {
+                    hasCompletedOnboarding = true
+                }
             } else if !services.auth.isSignedIn {
                 SignInView(auth: services.auth)
             } else {
@@ -33,12 +41,8 @@ struct RootTabView: View {
             ScanHomeView(model: scanFlow)
                 .tabItem { Label("Scan", systemImage: "camera.fill") }
 
-            PlaceholderScreen(
-                title: "My Recipes",
-                systemImage: "book.fill",
-                message: "Saved and cooked recipes land in the next build."
-            )
-            .tabItem { Label("My Recipes", systemImage: "book.fill") }
+            MyRecipesView(services: services)
+                .tabItem { Label("My Recipes", systemImage: "book.fill") }
 
             PlaceholderScreen(
                 title: "Community",

@@ -1,10 +1,19 @@
+import SwiftData
 import SwiftUI
 
-// Full recipe screen. Cook Mode (step-by-step, timers) arrives in M3;
-// the button is present but explains itself until then.
+// Full recipe screen. "Start cooking" launches full-screen Cook Mode (M3).
 struct RecipeDetailView: View {
     let recipe: Recipe
-    @State private var showCookModeNote = false
+    let services: AppServices
+
+    @Environment(\.modelContext) private var modelContext
+    @Query private var saves: [SavedRecipe]
+    @State private var showCookMode = false
+
+    private var savedEntry: SavedRecipe? {
+        let stableID = recipe.id ?? ""
+        return saves.first { $0.recipeID == stableID }
+    }
 
     var body: some View {
         ScrollView {
@@ -62,9 +71,18 @@ struct RecipeDetailView: View {
             .padding()
         }
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(action: toggleSave) {
+                    Image(systemName: savedEntry != nil ? "heart.fill" : "heart")
+                        .foregroundStyle(savedEntry != nil ? Theme.red : .primary)
+                }
+                .accessibilityLabel(savedEntry != nil ? "Remove from My Recipes" : "Save to My Recipes")
+            }
+        }
         .safeAreaInset(edge: .bottom) {
             Button {
-                showCookModeNote = true
+                showCookMode = true
             } label: {
                 Label("Start cooking", systemImage: "flame.fill")
                     .frame(maxWidth: .infinity)
@@ -75,11 +93,19 @@ struct RecipeDetailView: View {
             .padding()
             .background(.bar)
         }
-        .alert("Cook Mode is coming", isPresented: $showCookModeNote) {
-            Button("OK", role: .cancel) {}
-        } message: {
-            Text("Full-screen step-by-step cooking with timers lands in the next build. For now, the steps above have your back.")
+        .fullScreenCover(isPresented: $showCookMode) {
+            CookModeView(recipe: recipe, services: services)
         }
+    }
+
+    private func toggleSave() {
+        if let existing = savedEntry {
+            modelContext.delete(existing)
+        } else {
+            modelContext.insert(SavedRecipe(recipe: recipe))
+            services.analytics.log(AnalyticsEvent.recipeSaved, props: ["recipe": recipe.title])
+        }
+        try? modelContext.save()
     }
 
     private func formatTimer(_ seconds: Int) -> String {

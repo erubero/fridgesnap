@@ -31,7 +31,7 @@ struct ScanHomeView: View {
                 case .results:
                     RecipeResultsView(model: model)
                 case .detail(let recipe):
-                    RecipeDetailView(recipe: recipe)
+                    RecipeDetailView(recipe: recipe, services: model.services)
                 }
             }
             .sheet(isPresented: $showCamera) {

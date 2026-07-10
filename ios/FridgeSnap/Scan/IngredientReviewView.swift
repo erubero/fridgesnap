@@ -24,8 +24,8 @@ struct IngredientReviewView: View {
                     IngredientRow(
                         ingredient: ingredient,
                         scanDate: model.editor.scanDate,
-                        onConfirm: { model.editor.confirm(named: ingredient.name) },
-                        onRemove: { model.editor.remove(named: ingredient.name) }
+                        onConfirm: { model.confirmIngredient(named: ingredient.name) },
+                        onRemove: { model.removeIngredient(named: ingredient.name) }
                     )
                 }
             }
@@ -41,7 +41,7 @@ struct IngredientReviewView: View {
                 }
                 ForEach(IngredientEditor.matchingSuggestions(for: addQuery, excluding: model.editor.ingredients), id: \.self) { suggestion in
                     Button {
-                        model.editor.add(name: suggestion)
+                        model.addIngredient(name: suggestion)
                         addQuery = ""
                     } label: {
                         Label(suggestion, systemImage: "plus.circle")
@@ -68,7 +68,7 @@ struct IngredientReviewView: View {
     }
 
     private func addCurrentQuery() {
-        model.editor.add(name: addQuery)
+        model.addIngredient(name: addQuery)
         addQuery = ""
     }
 }

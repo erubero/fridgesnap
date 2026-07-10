@@ -10,6 +10,6 @@ struct FridgeSnapApp: App {
             RootTabView(services: services)
                 .tint(Theme.green)
         }
-        .modelContainer(for: LocalScan.self)
+        .modelContainer(for: [LocalScan.self, SavedRecipe.self])
     }
 }

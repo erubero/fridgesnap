@@ -6,9 +6,22 @@ import { createClient } from 'npm:@supabase/supabase-js@2';
 
 const BATCH_SIZE = 200;
 
+// Constant-time compare so a mistimed response can't leak how many leading
+// bytes of CRON_SECRET a guess got right.
+function timingSafeEqualStrings(a: string, b: string): boolean {
+  const enc = new TextEncoder();
+  const aBytes = enc.encode(a);
+  const bBytes = enc.encode(b);
+  if (aBytes.length !== bBytes.length) return false;
+  let diff = 0;
+  for (let i = 0; i < aBytes.length; i++) diff |= aBytes[i] ^ bBytes[i];
+  return diff === 0;
+}
+
 Deno.serve(async (req) => {
   const cronSecret = Deno.env.get('CRON_SECRET') ?? '';
-  if (req.headers.get('Authorization') !== `Bearer ${cronSecret}` || cronSecret === '') {
+  const provided = req.headers.get('Authorization') ?? '';
+  if (cronSecret === '' || !timingSafeEqualStrings(provided, `Bearer ${cronSecret}`)) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });
   }
 

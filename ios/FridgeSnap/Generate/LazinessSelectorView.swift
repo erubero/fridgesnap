@@ -20,7 +20,7 @@ struct LazinessSelectorView: View {
                 ForEach(LazinessLevel.allCases) { level in
                     let selected = model.selectedLevel == level
                     Button {
-                        model.selectedLevel = level
+                        model.selectLevel(level)
                     } label: {
                         VStack(alignment: .leading, spacing: 8) {
                             HStack {
