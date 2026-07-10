@@ -30,23 +30,30 @@ three places.
 
 ## Design source of truth
 
-Owner's claude.ai/design project "Fridge-to-recipe AI app" (file
-SnapFridge.dc.html), implemented 2026-07-09. The tokens below mirror it.
+Layout and components follow the owner's claude.ai/design project
+"Fridge-to-recipe AI app" (file SnapFridge.dc.html), implemented 2026-07-09.
+COLOR comes from the official logo (adopted 2026-07-10): its sage green and
+warm cream replaced the design mock's vivid green and neutral cream so the
+mark and the UI read as one brand.
 
 ## Color
 
 | Token | Hex | Use |
 |---|---|---|
-| Green (brand) | #1FA24A | primary actions, logo tile, links |
-| Green deep | #167A38 | Some Effort badge text |
-| Green light | #E8F5EC | selected cards, badge fills |
-| Green bright | #5FCE85 | kcal number on dark panels |
+| Green (brand) | #74966A | primary actions, links; sampled from the logo fridge |
+| Green deep | #4E6B45 | text on light sage fills, selected-state copy |
+| Green light | #EDF2E9 | selected cards, badge fills |
+| Green bright | #A9C49E | kcal number on dark panels |
 | Ink | #1B1E1A | dark panels, headline text |
 | Dark card | #252923 | cells inside dark panels |
-| Canvas | #FAFAF7 | page/app background (cream, never pure white) |
+| Canvas | #FEF5EF | page/app background; sampled from the logo cream |
 | Amber | #C06515 / #FCEFE2 | Lazy AF badge; use-soon freshness |
 | Purple | #5A4FBF / #E9E7F8 | Chef Mode badge |
 | Red | #C0392B / #FCE8E4 | destructive, spoiled freshness |
+
+Sage #74966A on white is 3.3:1, enough for large/bold text and filled
+buttons but NOT for small body text; use green deep #4E6B45 for
+normal-size green text on light backgrounds.
 
 Semantic freshness colors (amber use-soon, crimson spoiled) stay separate from
 brand red on purpose.

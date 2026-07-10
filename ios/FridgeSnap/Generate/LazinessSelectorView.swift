@@ -39,7 +39,7 @@ struct LazinessSelectorView: View {
                                 .foregroundStyle(Theme.ink)
                             Text(level.designBlurb)
                                 .font(.footnote)
-                                .foregroundStyle(selected ? Color(red: 0.24, green: 0.35, blue: 0.28) : .secondary)
+                                .foregroundStyle(selected ? Theme.greenDeep : .secondary)
                                 .multilineTextAlignment(.leading)
                         }
                         .padding(22)

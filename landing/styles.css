@@ -4,15 +4,15 @@
 
 :root {
   --backdrop: #232522;
-  --canvas: #FAFAF7;
+  --canvas: #FEF5EF;
   --card: #FFFFFF;
   --ink: #1B1E1A;
   --ink-soft: #5A6057;
   --ink-muted: #9BA097;
-  --green: #1FA24A;
-  --green-deep: #167A38;
-  --green-light: #E8F5EC;
-  --green-bright: #5FCE85;
+  --green: #74966A;
+  --green-deep: #4E6B45;
+  --green-light: #EDF2E9;
+  --green-bright: #A9C49E;
   --amber: #C06515;
   --amber-light: #FCEFE2;
   --purple: #5A4FBF;
@@ -303,7 +303,7 @@ section h2 {
   gap: 48px;
 }
 
-.dark-band h2 { color: #FAFAF7; }
+.dark-band h2 { color: #FEF5EF; }
 
 .dark-card {
   background: var(--dark-card);

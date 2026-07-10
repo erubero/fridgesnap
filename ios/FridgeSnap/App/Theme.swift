@@ -1,12 +1,14 @@
 import SwiftUI
 
-// Design tokens from the SnapFridge.dc design project (claude.ai/design).
-// Semantic freshness colors stay separate from the brand green.
+// Design tokens. Greens and cream come from the official logo palette
+// (brand/README.md, adopted 2026-07-10); layout follows the SnapFridge.dc
+// design project (claude.ai/design). Semantic freshness colors stay separate
+// from the brand green.
 enum Theme {
-    static let green = Color(red: 0x1F / 255, green: 0xA2 / 255, blue: 0x4A / 255)
-    static let greenDeep = Color(red: 0x16 / 255, green: 0x7A / 255, blue: 0x38 / 255)
-    static let greenLight = Color(red: 0xE8 / 255, green: 0xF5 / 255, blue: 0xEC / 255)
-    static let greenBright = Color(red: 0x5F / 255, green: 0xCE / 255, blue: 0x85 / 255)
+    static let green = Color(red: 0x74 / 255, green: 0x96 / 255, blue: 0x6A / 255)
+    static let greenDeep = Color(red: 0x4E / 255, green: 0x6B / 255, blue: 0x45 / 255)
+    static let greenLight = Color(red: 0xED / 255, green: 0xF2 / 255, blue: 0xE9 / 255)
+    static let greenBright = Color(red: 0xA9 / 255, green: 0xC4 / 255, blue: 0x9E / 255)
     static let amber = Color(red: 0xC0 / 255, green: 0x65 / 255, blue: 0x15 / 255)
     static let amberLight = Color(red: 0xFC / 255, green: 0xEF / 255, blue: 0xE2 / 255)
     static let purple = Color(red: 0x5A / 255, green: 0x4F / 255, blue: 0xBF / 255)
@@ -15,7 +17,7 @@ enum Theme {
     static let redLight = Color(red: 0xFC / 255, green: 0xE8 / 255, blue: 0xE4 / 255)
     static let ink = Color(red: 0x1B / 255, green: 0x1E / 255, blue: 0x1A / 255)
     static let darkCard = Color(red: 0x25 / 255, green: 0x29 / 255, blue: 0x23 / 255)
-    static let canvas = Color(red: 0xFA / 255, green: 0xFA / 255, blue: 0xF7 / 255)
+    static let canvas = Color(red: 0xFE / 255, green: 0xF5 / 255, blue: 0xEF / 255)
 }
 
 // Official logo (brand/logo/fridgesnap-logo.png) used on sign-in and
