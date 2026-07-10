@@ -4,7 +4,7 @@
 // Same pattern as WindDown and Warraya. No build step; landing/ is plain HTML/CSS.
 {
   "$schema": "https://unpkg.com/wrangler/config-schema.json",
-  "name": "fridgesnap",
+  "name": "lazychef",
   "compatibility_date": "2026-07-09",
   "assets": {
     "directory": "./landing",
