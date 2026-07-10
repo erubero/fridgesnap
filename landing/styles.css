@@ -532,3 +532,15 @@ html.fx .reveal.in { opacity: 1; transform: none; }
   .blob { filter: blur(45px); }
   .legal { padding: 40px 24px; }
 }
+
+/* About section (homepage SEO copy) and guide pages. Additive only. */
+.about-copy { max-width: 800px; margin: 0 auto; }
+.about-copy p { color: var(--ink-soft); margin-bottom: 14px; }
+.about-copy p:last-child { margin-bottom: 0; }
+.about-copy a { color: var(--green-deep); font-weight: 600; }
+.legal .crumb { display: block; color: var(--ink-muted); font-size: 0.85rem; margin-bottom: 16px; }
+.legal h3 { font-size: 1.02rem; font-weight: 700; margin: 18px 0 8px; }
+.legal a { color: var(--green-deep); }
+.guide-cta { background: var(--green-light); border: 1px solid var(--line); border-radius: var(--r-md); padding: 20px 22px; margin-top: 28px; }
+.guide-cta p:last-child { margin-bottom: 0; }
+.guide-nav { margin-top: 26px; font-size: 0.9rem; }
