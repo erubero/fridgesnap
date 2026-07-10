@@ -20,22 +20,7 @@ struct RecipeDetailView: View {
                         .foregroundStyle(.secondary)
                 }
 
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Per serving (estimated)")
-                        .font(.headline)
-                    HStack(spacing: 22) {
-                        MacroPill(value: "\(recipe.nutritionPerServing.calories)", unit: "cal")
-                        MacroPill(value: "\(recipe.nutritionPerServing.proteinG)g", unit: "protein")
-                        MacroPill(value: "\(recipe.nutritionPerServing.carbsG)g", unit: "carbs")
-                        MacroPill(value: "\(recipe.nutritionPerServing.fatG)g", unit: "fat")
-                    }
-                    Text("Nutritional values are estimates.")
-                        .font(.caption2)
-                        .foregroundStyle(.tertiary)
-                }
-                .padding(16)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .background(.fill.tertiary, in: RoundedRectangle(cornerRadius: 14))
+                MacroPanel(nutrition: recipe.nutritionPerServing, servings: recipe.servings)
 
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Ingredients")
@@ -81,10 +66,11 @@ struct RecipeDetailView: View {
             Button {
                 showCookModeNote = true
             } label: {
-                Label("Start Cooking", systemImage: "flame.fill")
+                Label("Start cooking", systemImage: "flame.fill")
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)
+            .tint(Theme.green)
             .controlSize(.large)
             .padding()
             .background(.bar)

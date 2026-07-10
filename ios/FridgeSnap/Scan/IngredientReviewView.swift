@@ -49,16 +49,17 @@ struct IngredientReviewView: View {
                 }
             }
         }
-        .navigationTitle("\(model.editor.ingredients.count) ingredients")
+        .navigationTitle("Found \(model.editor.ingredients.count) things")
         .navigationBarTitleDisplayMode(.inline)
         .safeAreaInset(edge: .bottom) {
             Button {
                 model.proceedToLevelSelect()
             } label: {
-                Text("Looks right")
+                Text("Looks right, next")
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)
+            .tint(Theme.green)
             .controlSize(.large)
             .padding()
             .background(.bar)

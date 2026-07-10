@@ -104,7 +104,7 @@ enum MockData {
             { "order": 2, "text": "Add rice, onion, and spinach. Stir fry for 5 minutes.", "timer_seconds": 300 },
             { "order": 3, "text": "Season with salt and pepper. Eat from the pan, we will not tell.", "timer_seconds": null }
           ],
-          "nutrition_per_serving": { "calories": 540, "protein_g": 22, "carbs_g": 61, "fat_g": 21 }
+          "nutrition_per_serving": { "calories": 540, "protein_g": 22, "carbs_g": 61, "fat_g": 21, "fiber_g": 3, "sugar_g": 4 }
         },
         {
           "title": "Spinach Cheese Omelette",
@@ -122,7 +122,7 @@ enum MockData {
             { "order": 2, "text": "Pour into a hot oiled pan, add spinach and cheese, cook for 3 minutes.", "timer_seconds": 180 },
             { "order": 3, "text": "Fold it over. If it breaks, call it scrambled and move on.", "timer_seconds": null }
           ],
-          "nutrition_per_serving": { "calories": 420, "protein_g": 28, "carbs_g": 4, "fat_g": 32 }
+          "nutrition_per_serving": { "calories": 420, "protein_g": 28, "carbs_g": 4, "fat_g": 32, "fiber_g": 1, "sugar_g": 2 }
         },
         {
           "title": "Carrot Rice Bowl",
@@ -140,7 +140,7 @@ enum MockData {
             { "order": 2, "text": "Fry the eggs while the carrots sit on top of the warm rice.", "timer_seconds": null },
             { "order": 3, "text": "Stack it all in a bowl and season.", "timer_seconds": null }
           ],
-          "nutrition_per_serving": { "calories": 480, "protein_g": 16, "carbs_g": 66, "fat_g": 15 }
+          "nutrition_per_serving": { "calories": 480, "protein_g": 16, "carbs_g": 66, "fat_g": 15, "fiber_g": 5, "sugar_g": 7 }
         }
       ]
     }

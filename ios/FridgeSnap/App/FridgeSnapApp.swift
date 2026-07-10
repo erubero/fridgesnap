@@ -8,6 +8,7 @@ struct FridgeSnapApp: App {
     var body: some Scene {
         WindowGroup {
             RootTabView(services: services)
+                .tint(Theme.green)
         }
         .modelContainer(for: LocalScan.self)
     }

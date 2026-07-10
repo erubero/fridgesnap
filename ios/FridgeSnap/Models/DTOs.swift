@@ -181,12 +181,17 @@ struct Nutrition: Codable, Equatable, Hashable {
     var proteinG: Int
     var carbsG: Int
     var fatG: Int
+    // Optional so recipes generated before the fiber/sugar upgrade decode.
+    var fiberG: Int?
+    var sugarG: Int?
 
     enum CodingKeys: String, CodingKey {
         case calories
         case proteinG = "protein_g"
         case carbsG = "carbs_g"
         case fatG = "fat_g"
+        case fiberG = "fiber_g"
+        case sugarG = "sugar_g"
     }
 }
 

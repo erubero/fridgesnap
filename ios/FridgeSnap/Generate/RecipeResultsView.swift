@@ -53,11 +53,7 @@ private struct RecipeCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
-                Text("\(recipe.level.emoji) \(recipe.level.title)")
-                    .font(.caption.weight(.bold))
-                    .padding(.horizontal, 10)
-                    .padding(.vertical, 4)
-                    .background(.fill.secondary, in: Capsule())
+                LevelBadge(level: recipe.level)
                 Spacer()
                 Text("\(recipe.timeMinutes) min · \(recipe.steps.count) steps")
                     .font(.caption)

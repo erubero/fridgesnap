@@ -16,8 +16,14 @@
       for (var i = 0; i < floats.length; i++) {
         var el = floats[i];
         var speed = parseFloat(el.getAttribute('data-speed')) || 0;
-        el.style.transform =
-          'translate3d(0, ' + (y * speed).toFixed(1) + 'px, 0) rotate(' + (el.getAttribute('data-rot') || '0') + 'deg)';
+        if (el.getAttribute('data-mode') === 'margin') {
+          // Blobs animate transform via CSS drift keyframes, so the scroll
+          // offset rides on margin-top instead (SnapFridge.dc technique).
+          el.style.marginTop = (y * speed).toFixed(1) + 'px';
+        } else {
+          el.style.transform =
+            'translate3d(0, ' + (y * speed).toFixed(1) + 'px, 0) rotate(' + (el.getAttribute('data-rot') || '0') + 'deg)';
+        }
       }
     };
     window.addEventListener(
