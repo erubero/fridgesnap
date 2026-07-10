@@ -18,6 +18,20 @@ enum Theme {
     static let canvas = Color(red: 0xFA / 255, green: 0xFA / 255, blue: 0xF7 / 255)
 }
 
+// Official logo (brand/logo/fridgesnap-logo.png) used on sign-in and
+// onboarding. Rounded because the source art is a square tile.
+struct AppLogo: View {
+    let size: CGFloat
+
+    var body: some View {
+        Image("Logo")
+            .resizable()
+            .scaledToFit()
+            .frame(width: size, height: size)
+            .clipShape(RoundedRectangle(cornerRadius: size * 0.22))
+    }
+}
+
 extension LazinessLevel {
     // Per-mode badge colors from the design (amber / green / purple).
     var badgeForeground: Color {

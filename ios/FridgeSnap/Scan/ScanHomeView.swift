@@ -55,6 +55,17 @@ struct ScanHomeView: View {
                 Task { await loadPicked(items) }
             }
         }
+        // On the NavigationStack itself so the loaders also cover the pushed
+        // selector and results screens during generation.
+        .overlay {
+            if model.isScanning {
+                LoadingOverlay(message: "Reading your fridge...")
+            } else if model.isGenerating {
+                LoadingOverlay(message: "Inventing dinner...")
+            }
+        }
+        .animation(.easeInOut(duration: 0.2), value: model.isScanning)
+        .animation(.easeInOut(duration: 0.2), value: model.isGenerating)
     }
 
     private var photoSection: some View {

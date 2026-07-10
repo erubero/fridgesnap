@@ -12,8 +12,7 @@ struct SignInView: View {
     var body: some View {
         VStack(spacing: 24) {
             Spacer()
-            Text("🍳")
-                .font(.system(size: 72))
+            AppLogo(size: 96)
             Text("FridgeSnap")
                 .font(.largeTitle.bold())
             Text("Photograph your fridge. Pick how lazy you feel. Dinner happens anyway.")

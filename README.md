@@ -1,6 +1,6 @@
 # FridgeSnap
 
-[![CI](https://github.com/erubero/lazychef/actions/workflows/ci.yml/badge.svg)](https://github.com/erubero/lazychef/actions/workflows/ci.yml)
+[![CI](https://github.com/erubero/fridgesnap/actions/workflows/ci.yml/badge.svg)](https://github.com/erubero/fridgesnap/actions/workflows/ci.yml)
 
 Point your camera at your fridge. Pick how lazy you feel. Get a recipe you can actually make, with calories and macros.
 
