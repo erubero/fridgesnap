@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LazyChef: turn a photo of your fridge into a recipe</title>
+  <title>FridgeSnap: turn a photo of your fridge into a recipe</title>
   <meta name="description" content="Snap a photo of your fridge, pick how lazy you feel, and get a recipe you can actually make. Calories and macros included. $4.99 a month, 7-day free trial.">
-  <meta property="og:title" content="LazyChef: turn a photo of your fridge into a recipe">
+  <meta property="og:title" content="FridgeSnap: turn a photo of your fridge into a recipe">
   <meta property="og:description" content="Snap your fridge. Pick how lazy you feel. Get a recipe with calories and macros in seconds.">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Sora:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "LazyChef",
+    "name": "FridgeSnap",
     "operatingSystem": "iOS",
     "applicationCategory": "LifestyleApplication",
     "description": "Photograph your fridge, pick a laziness level, and get a recipe with calories and macros.",
@@ -26,119 +26,212 @@
 </head>
 <body>
 
+<div class="frame">
+
+  <!-- Layered background: soft color blobs and parallax ingredient stickers -->
+  <div class="frame-bg" aria-hidden="true">
+    <span class="blob blob-tomato" data-speed="0.06"></span>
+    <span class="blob blob-butter" data-speed="0.1"></span>
+    <span class="blob blob-leaf" data-speed="0.05"></span>
+    <span class="blob blob-tomato blob-low" data-speed="0.08"></span>
+    <span class="blob blob-butter blob-mid" data-speed="0.04"></span>
+    <span class="float f1" data-speed="-0.12" data-rot="-12">🍅</span>
+    <span class="float f2" data-speed="-0.2" data-rot="14">🥑</span>
+    <span class="float f3" data-speed="-0.08" data-rot="8">🧄</span>
+    <span class="float f4" data-speed="-0.16" data-rot="-18">🍋</span>
+    <span class="float f5" data-speed="-0.1" data-rot="10">🥕</span>
+    <span class="float f6" data-speed="-0.22" data-rot="-8">🌶️</span>
+    <span class="float f7" data-speed="-0.07" data-rot="16">🧀</span>
+    <span class="float f8" data-speed="-0.14" data-rot="-14">🥦</span>
+  </div>
+
+  <div class="frame-content">
+
+  <nav class="topbar glass">
+    <span class="logo">🍳 FridgeSnap</span>
+    <div class="nav-links">
+      <a href="#how" class="nav-pill">📸 How it works</a>
+      <a href="#levels" class="nav-pill">🛋️ Lazy levels</a>
+      <a href="#pricing" class="nav-pill">💸 Pricing</a>
+      <a href="#faq" class="nav-pill">🤔 FAQ</a>
+    </div>
+    <span class="cta-pill">Coming soon</span>
+  </nav>
+
   <header class="hero">
-    <p class="logo">🍳 LazyChef</p>
-    <h1>The app that turns a photo of your fridge into a recipe</h1>
-    <p class="subhead">Snap your fridge. Pick how lazy you feel. Get a recipe with calories and macros in seconds.</p>
-    <p class="coming-soon">Coming soon to the App Store</p>
+    <div class="hero-copy reveal">
+      <h1>The app that turns a photo of your fridge into a recipe</h1>
+      <p class="subhead">Point your camera at the chaos. Tell us how lazy you feel. Three real recipes, calories and macros included, before the delivery app even loads.</p>
+      <p class="chips-label">Tonight's suspects:</p>
+      <div class="chip-row">
+        <span class="chip glass-chip">🥚 six eggs</span>
+        <span class="chip glass-chip">🍚 leftover rice</span>
+        <span class="chip glass-chip">🍅 two sad tomatoes</span>
+        <span class="chip glass-chip">🧀 mystery cheese</span>
+        <span class="chip chip-on">= dinner</span>
+      </div>
+    </div>
+
+    <div class="panel-stack reveal">
+      <span class="stack-layer layer-2" aria-hidden="true"></span>
+      <span class="stack-layer layer-1" aria-hidden="true"></span>
+      <aside class="scan-panel glass-panel" aria-label="Example of a fridge scan inside the app">
+        <div class="panel-head">
+          <strong>Your fridge scan</strong>
+          <span class="panel-count">4 ingredients</span>
+        </div>
+        <ul class="scan-list">
+          <li><span class="scan-emoji">🥑</span><span class="scan-name">Avocado<em>ripe now · use today</em></span><span class="scan-due">!</span></li>
+          <li><span class="scan-emoji">🥚</span><span class="scan-name">Eggs<em>about 6 · due in 3 weeks</em></span><span class="scan-ok">✓</span></li>
+          <li><span class="scan-emoji">🍚</span><span class="scan-name">Cooked rice<em>2 cups · due Friday</em></span><span class="scan-ok">✓</span></li>
+          <li><span class="scan-emoji">🧅</span><span class="scan-name">Onion<em>half, still fine</em></span><span class="scan-ok">✓</span></li>
+        </ul>
+        <div class="panel-level">
+          <span class="mini-chip mini-on">🛋️ Lazy AF</span>
+          <span class="mini-chip">🍳 Some Effort</span>
+          <span class="mini-chip">👨‍🍳 Chef Mode</span>
+        </div>
+        <div class="panel-result">
+          <p class="result-title">Lazy Egg Fried Rice</p>
+          <p class="result-meta">10 min · 3 steps · one pan · est. 540 cal</p>
+        </div>
+        <span class="panel-cta">Cook it</span>
+        <p class="panel-note">Illustration of the app. Your fridge will be weirder.</p>
+      </aside>
+    </div>
   </header>
 
   <main>
-    <section class="how" aria-labelledby="how-title">
-      <h2 id="how-title">How it works</h2>
+    <section id="how" aria-labelledby="how-title">
+      <h2 id="how-title" class="reveal">Fridge to fork in three taps</h2>
       <div class="cards three">
-        <div class="card">
+        <div class="card dashed reveal">
           <span class="emoji">📸</span>
-          <h3>Scan your fridge</h3>
-          <p>Take a few photos of whatever is in there. Photo recognition figures out what you have, down to the half bag of spinach.</p>
+          <h3>Scan the fridge</h3>
+          <p>Photograph whatever is in there. No sorting, no typing, no judgment. Photo recognition spots everything down to the half bag of spinach, checks how ripe things look, and tells you when the avocado is due.</p>
         </div>
-        <div class="card">
+        <div class="card dashed reveal delay-1">
           <span class="emoji">🛋️</span>
-          <h3>Pick your laziness level</h3>
-          <p>Be honest. There is no wrong answer, only wrong delivery fees.</p>
+          <h3>Confess your laziness</h3>
+          <p>Three levels, zero shame. Be honest. There are no wrong answers, only wrong delivery fees.</p>
         </div>
-        <div class="card">
+        <div class="card dashed reveal delay-2">
           <span class="emoji">🍽️</span>
-          <h3>Cook in minutes</h3>
-          <p>Three recipes to choose from, each with big-text steps and built-in timers. Made for greasy fingers.</p>
+          <h3>Cook the easy way</h3>
+          <p>Pick from three recipes built from your actual food. Giant text, one step at a time, timers built in. Designed for greasy fingers and low expectations.</p>
         </div>
       </div>
     </section>
 
-    <section class="levels" aria-labelledby="levels-title">
-      <h2 id="levels-title">Three levels of lazy</h2>
+    <section id="levels" aria-labelledby="levels-title">
+      <h2 id="levels-title" class="reveal">Three levels of lazy</h2>
+      <p class="section-sub reveal">The app meets you exactly where you are. Usually the couch.</p>
       <div class="cards three">
-        <div class="card level">
-          <span class="emoji">🛋️</span>
-          <h3>Lazy AF</h3>
-          <p class="level-rules">Max 3 steps. Max 10 minutes. One pan or zero pans. The microwave counts as cooking here.</p>
-          <p class="example">Example: Lazy Egg Fried Rice. One pan, ten minutes, tastes like takeout.</p>
+        <div class="card level reveal">
+          <span class="level-badge badge-dark">🛋️ Lazy AF</span>
+          <p class="level-rules">Max 3 steps. Max 10 minutes. One pan or zero pans. Yes, the microwave counts as cooking. We said no judgment and we meant it.</p>
+          <div class="example">
+            <p class="example-name">Lazy Egg Fried Rice</p>
+            <p class="example-meta">10 min · 3 steps · tastes like takeout</p>
+          </div>
         </div>
-        <div class="card level">
-          <span class="emoji">🍳</span>
-          <h3>Some Effort</h3>
-          <p class="level-rules">Up to 25 minutes and 6 steps. Chopping is allowed. Nothing fancy, promise.</p>
-          <p class="example">Example: Crispy Chicken Rice Bowl. Real dinner, minor commitment.</p>
+        <div class="card level reveal delay-1">
+          <span class="level-badge badge-red">🍳 Some Effort</span>
+          <p class="level-rules">Up to 25 minutes and 6 steps. Chopping is allowed. Basic moves only: chop, fry, boil, bake. Nothing you cannot do while texting.</p>
+          <div class="example">
+            <p class="example-name">Crispy Chicken Rice Bowl</p>
+            <p class="example-meta">25 min · real dinner · minor commitment</p>
+          </div>
         </div>
-        <div class="card level">
-          <span class="emoji">👨‍🍳</span>
-          <h3>Chef Mode</h3>
-          <p class="level-rules">Up to 60 minutes, real techniques, and every recipe teaches you something. Still only uses what is in your fridge.</p>
-          <p class="example">Example: Pan Seared Salmon with Lemon Butter. You will learn to baste.</p>
+        <div class="card level reveal delay-2">
+          <span class="level-badge badge-green">👨‍🍳 Chef Mode</span>
+          <p class="level-rules">Up to 60 minutes and real techniques. Every recipe teaches you one skill and names it. Still uses only what is already in your fridge.</p>
+          <div class="example">
+            <p class="example-name">Pan Seared Salmon, Lemon Butter</p>
+            <p class="example-meta">40 min · you will learn to baste</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="nutrition" aria-labelledby="nutrition-title">
-      <h2 id="nutrition-title">Numbers without the math</h2>
-      <p>Every recipe comes with estimated calories, protein, carbs, and fat per serving. No math, no guilt spirals.</p>
-    </section>
-
-    <section class="community" aria-labelledby="community-title">
-      <h2 id="community-title">Lazy people helping lazy people</h2>
-      <p>Steal recipes from other lazy people. Publish the ones you actually cooked. The more everyone cooks, the smarter the suggestions get. Plus Chef's Picks, a curated shelf of the good stuff.</p>
-    </section>
-
-    <section class="pricing" aria-labelledby="pricing-title">
-      <h2 id="pricing-title">Pricing</h2>
-      <div class="price-card">
-        <p class="price">$4.99<span>/month</span></p>
-        <p class="anchor">One delivery fee. A month of dinners.</p>
-        <ul>
-          <li>Unlimited fridge scans</li>
-          <li>Unlimited recipe generations</li>
-          <li>All three laziness levels</li>
-          <li>Calories and macros on every recipe</li>
-          <li>Community recipes and Chef's Picks</li>
-        </ul>
-        <p class="trial">7-day free trial. Cancel anytime.</p>
+    <section class="strip" aria-labelledby="nutrition-title">
+      <div class="strip-inner glass-panel reveal">
+        <h2 id="nutrition-title">Numbers without the math</h2>
+        <p>Every recipe shows estimated calories, protein, carbs, and fat per serving. Know what you are eating without opening a spreadsheet or spiraling.</p>
+        <div class="macro-row" aria-hidden="true">
+          <span class="macro glass-chip"><strong>540</strong>cal</span>
+          <span class="macro glass-chip"><strong>22g</strong>protein</span>
+          <span class="macro glass-chip"><strong>61g</strong>carbs</span>
+          <span class="macro glass-chip"><strong>21g</strong>fat</span>
+        </div>
       </div>
     </section>
 
-    <section class="faq" aria-labelledby="faq-title">
-      <h2 id="faq-title">Questions</h2>
-      <details>
+    <section id="community" aria-labelledby="community-title">
+      <h2 id="community-title" class="reveal">Lazy people helping lazy people</h2>
+      <p class="section-sub reveal">Steal recipes from other lazy people. Publish the ones you actually cooked, because only cooked recipes make the feed. The more everyone cooks, the smarter the suggestions get. And when you want a sure thing, Chef's Picks is the curated shelf of the good stuff.</p>
+    </section>
+
+    <section id="pricing" aria-labelledby="pricing-title">
+      <h2 id="pricing-title" class="reveal">One price. Zero decisions.</h2>
+      <div class="panel-stack price-stack reveal">
+        <span class="stack-layer layer-2" aria-hidden="true"></span>
+        <span class="stack-layer layer-1" aria-hidden="true"></span>
+        <div class="price-card glass-panel">
+          <p class="price">$4.99<span>/month</span></p>
+          <p class="anchor">One delivery fee. A month of dinners.</p>
+          <ul>
+            <li>Unlimited fridge scans</li>
+            <li>Unlimited recipe generations</li>
+            <li>All three laziness levels</li>
+            <li>Calories and macros on every recipe</li>
+            <li>Community recipes and Chef's Picks</li>
+          </ul>
+          <span class="confirm">Start free for 7 days</span>
+          <p class="trial">Available at launch. Cancel anytime, no guilt trip.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title" class="reveal">Fair questions</h2>
+      <details class="reveal">
         <summary>Does it work with any kitchen?</summary>
-        <p>Yes. Fridge, pantry, counter, that one drawer. Photograph whatever you have and it works with it. Recipes may assume you own salt, pepper, and cooking oil, and we ask you once to confirm that.</p>
+        <p>Yes. Fridge, pantry, counter, that one chaotic drawer. Photograph whatever you have and it works with it. Recipes may assume you own salt, pepper, and cooking oil, and we ask you exactly once to confirm that.</p>
       </details>
-      <details>
+      <details class="reveal">
         <summary>What if it misses an ingredient?</summary>
-        <p>Photo recognition is good, not psychic. Anything it is unsure about gets flagged so you can confirm or remove it, and you can add items by hand in one tap.</p>
+        <p>Photo recognition is good, not psychic. Anything it is unsure about gets flagged so you can confirm or remove it, and adding an item by hand takes one tap.</p>
       </details>
-      <details>
+      <details class="reveal">
         <summary>Are the calories accurate?</summary>
         <p>They are estimates, clearly labeled as estimates. Good enough to keep you honest, not a medical device.</p>
       </details>
-      <details>
+      <details class="reveal">
         <summary>Can I cancel?</summary>
         <p>Anytime, in two taps, through your App Store subscriptions. The trial is 7 days and you will not be charged if you cancel before it ends.</p>
       </details>
-      <details>
+      <details class="reveal">
         <summary>Is my data private?</summary>
-        <p>Your fridge photos are processed to identify ingredients and deleted within 24 hours. They are never used for training and never shared. See the <a href="privacy.html">privacy policy</a>.</p>
+        <p>Your fridge photos are processed to identify ingredients and deleted within 24 hours. They are never used for training and never shared. Nobody needs to know about the six mustards. See the <a href="privacy.html">privacy policy</a>.</p>
       </details>
     </section>
   </main>
 
   <footer>
-    <p class="coming-soon">Coming soon to the App Store</p>
+    <span class="cta-pill">Coming soon to the App Store</span>
     <nav>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
       <a href="support.html">Support</a>
     </nav>
-    <p class="fine">LazyChef. Point the camera at the problem.</p>
+    <p class="fine">FridgeSnap. Point the camera at the problem.</p>
   </footer>
 
+  </div><!-- /frame-content -->
+
+</div>
+
+<script src="script.js" defer></script>
 </body>
 </html>
