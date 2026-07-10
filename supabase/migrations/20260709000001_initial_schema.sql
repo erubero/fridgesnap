@@ -1,4 +1,4 @@
--- LazyChef initial schema. Canonical shapes for ingredients/steps/nutrition
+-- FridgeSnap initial schema. Canonical shapes for ingredients/steps/nutrition
 -- jsonb live in lazychef-spec.md sections 4 and 5.
 
 -- 1. profiles -----------------------------------------------------------------

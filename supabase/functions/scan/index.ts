@@ -24,8 +24,17 @@ Rules:
 - If an item is ambiguous or partially hidden, include it with confidence "low".
 - quantity_estimate is a short human phrase like "about 6 eggs" or "half a bag of spinach".
 - calories_per_serving is the calories in one typical serving of that ingredient.
-- perishability_days is a rough estimate of days until the item goes bad from today.
-- category is the best fit from the allowed list.`;
+- category is the best fit from the allowed list.
+
+Freshness (judge from what you actually SEE, not generic shelf life):
+- ripeness applies to fresh fruit and vegetables only; use "not_applicable" for everything else.
+  - very_firm: not ripe yet
+  - slightly_firm: almost ready
+  - ready: good to eat now
+  - very_soft: eat very soon
+  - spoiled: moldy, mushy, or clearly bad
+- perishability_days is the number of days from today until the item goes bad, based on its VISIBLE state. A ready avocado gets 1 or 2 days, not the textbook week. Brown-spotted bananas get 1. Anything spoiled gets 0.
+- storage_tip is one short, friendly sentence that helps the item last, like "Keep on the counter until ripe, then refrigerate." Empty string when there is nothing useful to say.`;
 
 const INGREDIENTS_SCHEMA = {
   type: 'object',
@@ -44,8 +53,17 @@ const INGREDIENTS_SCHEMA = {
             type: 'string',
             enum: ['protein', 'vegetable', 'fruit', 'dairy', 'grain', 'condiment', 'beverage', 'other'],
           },
+          ripeness: {
+            type: 'string',
+            enum: ['very_firm', 'slightly_firm', 'ready', 'very_soft', 'spoiled', 'not_applicable'],
+            description: 'Visible ripeness for fresh produce; not_applicable for everything else',
+          },
+          storage_tip: {
+            type: 'string',
+            description: 'One short storage tip, or an empty string',
+          },
         },
-        required: ['name', 'quantity_estimate', 'confidence', 'calories_per_serving', 'perishability_days', 'category'],
+        required: ['name', 'quantity_estimate', 'confidence', 'calories_per_serving', 'perishability_days', 'category', 'ripeness', 'storage_tip'],
         additionalProperties: false,
       },
     },

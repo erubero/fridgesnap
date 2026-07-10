@@ -1,4 +1,4 @@
--- LazyChef storage buckets.
+-- FridgeSnap storage buckets.
 
 -- scan-images (private): fridge photos, uploaded by the client before calling
 -- the scan function. Object paths are {user_id}/{uuid}.jpg; the first folder

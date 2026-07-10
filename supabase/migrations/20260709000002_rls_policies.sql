@@ -1,4 +1,4 @@
--- LazyChef row level security. Convention: per-verb named policies.
+-- FridgeSnap row level security. Convention: per-verb named policies.
 -- Tables with RLS enabled and NO policies are service-role only: scans (insert),
 -- recipes (all writes), rate_limits, subscriptions, popular_combos.
 

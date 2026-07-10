@@ -23,4 +23,4 @@ jobs:
           # Pick whatever iPhone simulator the runner image ships with.
           DEVICE=$(xcrun simctl list devices available | grep -m1 -E '^\s+iPhone' | sed -E 's/^ +(iPhone [^(]+) \(.*/\1/' | sed 's/ *$//')
           echo "Using simulator: $DEVICE"
-          xcodebuild test -scheme LazyChef -destination "platform=iOS Simulator,name=$DEVICE"
+          xcodebuild test -scheme FridgeSnap -destination "platform=iOS Simulator,name=$DEVICE"

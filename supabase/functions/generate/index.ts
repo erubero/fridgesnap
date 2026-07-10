@@ -113,7 +113,8 @@ function buildSystemPrompt(
 - Never include an ingredient that is not in the provided list (staples excepted when allowed).
 - Every step that involves waiting (simmer, bake, boil, rest, microwave) must set timer_seconds to the wait duration.
 - Nutrition values are best estimates per serving.
-- Descriptions are short, plain, and a little funny about laziness. Never shame the user. No em dashes.`);
+- Descriptions are short, plain, and a little funny about laziness. Never shame the user. No em dashes.
+- Some ingredients are marked with the days left before they go bad. When an ingredient has 3 or fewer days left, strongly prefer recipes that use it, and say so in the description (for example "uses up that spinach before it turns"). Rescuing food beats wasting it.`);
 
   const restrictions: string[] = [];
   const prefs = dietaryPrefs ?? {};
@@ -172,6 +173,9 @@ Deno.serve(async (req) => {
       .map((i) => ({
         name: String(i.name).slice(0, 80),
         quantity_estimate: typeof i.quantity_estimate === 'string' ? i.quantity_estimate.slice(0, 80) : null,
+        perishability_days: Number.isInteger(i.perishability_days) && i.perishability_days >= 0
+          ? i.perishability_days as number
+          : null,
       }));
     if (ingredients.length === 0) return jsonResponse({ error: 'no valid ingredients' }, 400);
 
@@ -217,7 +221,14 @@ Deno.serve(async (req) => {
       combo?.summary ?? null,
     );
     const ingredientList = ingredients
-      .map((i) => (i.quantity_estimate ? `${i.name} (${i.quantity_estimate})` : i.name))
+      .map((i) => {
+        const parts: string[] = [];
+        if (i.quantity_estimate) parts.push(i.quantity_estimate);
+        if (i.perishability_days !== null && i.perishability_days <= 3) {
+          parts.push(`${i.perishability_days} day${i.perishability_days === 1 ? '' : 's'} left`);
+        }
+        return parts.length > 0 ? `${i.name} (${parts.join(', ')})` : i.name;
+      })
       .join(', ');
 
     const result = await callClaudeTool({

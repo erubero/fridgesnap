@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "757E2935CDD150FFFD3385CC"
-               BuildableName = "LazyChef.app"
-               BlueprintName = "LazyChef"
-               ReferencedContainer = "container:LazyChef.xcodeproj">
+               BlueprintIdentifier = "C5366C41BB649947DE45A798"
+               BuildableName = "FridgeSnap.app"
+               BlueprintName = "FridgeSnap"
+               ReferencedContainer = "container:FridgeSnap.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "757E2935CDD150FFFD3385CC"
-            BuildableName = "LazyChef.app"
-            BlueprintName = "LazyChef"
-            ReferencedContainer = "container:LazyChef.xcodeproj">
+            BlueprintIdentifier = "C5366C41BB649947DE45A798"
+            BuildableName = "FridgeSnap.app"
+            BlueprintName = "FridgeSnap"
+            ReferencedContainer = "container:FridgeSnap.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -44,10 +44,10 @@
             parallelizable = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "40DB89FBE06FEAC56A6B2B8E"
-               BuildableName = "LazyChefTests.xctest"
-               BlueprintName = "LazyChefTests"
-               ReferencedContainer = "container:LazyChef.xcodeproj">
+               BlueprintIdentifier = "5F207D23703837FA3570A322"
+               BuildableName = "FridgeSnapTests.xctest"
+               BlueprintName = "FridgeSnapTests"
+               ReferencedContainer = "container:FridgeSnap.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -68,10 +68,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "757E2935CDD150FFFD3385CC"
-            BuildableName = "LazyChef.app"
-            BlueprintName = "LazyChef"
-            ReferencedContainer = "container:LazyChef.xcodeproj">
+            BlueprintIdentifier = "C5366C41BB649947DE45A798"
+            BuildableName = "FridgeSnap.app"
+            BlueprintName = "FridgeSnap"
+            ReferencedContainer = "container:FridgeSnap.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -87,10 +87,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "757E2935CDD150FFFD3385CC"
-            BuildableName = "LazyChef.app"
-            BlueprintName = "LazyChef"
-            ReferencedContainer = "container:LazyChef.xcodeproj">
+            BlueprintIdentifier = "C5366C41BB649947DE45A798"
+            BuildableName = "FridgeSnap.app"
+            BlueprintName = "FridgeSnap"
+            ReferencedContainer = "container:FridgeSnap.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

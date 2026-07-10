@@ -1,0 +1,625 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		011B574675D14CFDD40DF240 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BC693860B327B6ED46189 /* AuthService.swift */; };
+		096E73352B54EBE6496CB661 /* ScanHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1E70F6F4E8F8B20B464EA3 /* ScanHomeView.swift */; };
+		0FC05885CF6818432BFC07FC /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2264F7AB683ADE2675636BC /* SignInView.swift */; };
+		1475C8B77CB302540077E51A /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3214CC7A7F5820953306A872 /* AppServices.swift */; };
+		2041902D1553B1E95DA73A09 /* IngredientEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99394DE601A299129565007 /* IngredientEditor.swift */; };
+		2B3DD27EE6F07A35BB1FF5C5 /* ScanFlowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5920B7B5B59E63103ADF79 /* ScanFlowModel.swift */; };
+		3D20DB1DCE35ABFF1292B600 /* ScanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11145528CD05E3BCFB9F9092 /* ScanService.swift */; };
+		3FE918CDB98CFE465821E087 /* ImagePipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535C6DD2C0CF9100190CFC5C /* ImagePipeline.swift */; };
+		40744CA80E4CF8C04C9ACBC2 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E5FC452350C225AF08A630 /* MockData.swift */; };
+		56D411017874EC3C213CC430 /* SmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B1EDB379493D07215A2405 /* SmokeTests.swift */; };
+		58F3676292D5CD2613C575D0 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 4F7866F982B54C5BAF5A43AE /* Supabase */; };
+		62EA640A1E203ED3E53BDBD5 /* IngredientReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30113398DC5437DF2A6EFE4B /* IngredientReviewView.swift */; };
+		82CF0FDEA12E57CBAFBE2649 /* GenerationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA9C834A0FD36EDDD7B11C8 /* GenerationService.swift */; };
+		96EB5FA6250AA40EEF6D8041 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7AF81B0E5D9C63EBFFF42 /* RecipeDetailView.swift */; };
+		A786F4E9133447020032950D /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC99B61F1125FDDCC9BA29 /* AppConfig.swift */; };
+		A8488C86F791F639A45670B5 /* LazinessSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BC64899E0F0D733141C0FF /* LazinessSelectorView.swift */; };
+		ACB0FCCEE1310E9806CBACA7 /* CoreLoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5084C2876585032CF0ADFD /* CoreLoopTests.swift */; };
+		AFF76BCD1470647F7A35A8DD /* RecipeResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C14C105FE7265FDFCBD79C /* RecipeResultsView.swift */; };
+		B210EEDE022FC6B69BFBA78F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = B4012DCCF4D8D1FA82D58D37 /* PrivacyInfo.xcprivacy */; };
+		C75C9766BBCCA04DDE035B75 /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362BE55E01CAB732DB856560 /* CameraPicker.swift */; };
+		CD2250ACF59FE899D54A7EAE /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE01650EE3BF520E42C7CFEF /* RootTabView.swift */; };
+		DD667BFBD423BD458E89BED0 /* DTOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB141590DC10FB59E567922E /* DTOs.swift */; };
+		F1FB3AABBE2FDC0CA47A5C67 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 902CF1DBEAF972DC8BF74856 /* RevenueCat */; };
+		FB15B260D702C4B8FCDE4DB8 /* LocalScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D0DCC2BB41382FAA94259C /* LocalScan.swift */; };
+		FF12B1702723AF6CEDAD7CCC /* FridgeSnapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404DF757A27AC85A344F25D3 /* FridgeSnapApp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		81BE119B246CBD59C79F8FEE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82A091FA775C6BB6BB23AC37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5366C41BB649947DE45A798;
+			remoteInfo = FridgeSnap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05C14C105FE7265FDFCBD79C /* RecipeResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResultsView.swift; sourceTree = "<group>"; };
+		10D0DCC2BB41382FAA94259C /* LocalScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalScan.swift; sourceTree = "<group>"; };
+		11145528CD05E3BCFB9F9092 /* ScanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanService.swift; sourceTree = "<group>"; };
+		221BC693860B327B6ED46189 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		2C5920B7B5B59E63103ADF79 /* ScanFlowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanFlowModel.swift; sourceTree = "<group>"; };
+		30113398DC5437DF2A6EFE4B /* IngredientReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientReviewView.swift; sourceTree = "<group>"; };
+		3214CC7A7F5820953306A872 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
+		362BE55E01CAB732DB856560 /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
+		3A5084C2876585032CF0ADFD /* CoreLoopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLoopTests.swift; sourceTree = "<group>"; };
+		3AA9C834A0FD36EDDD7B11C8 /* GenerationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationService.swift; sourceTree = "<group>"; };
+		404DF757A27AC85A344F25D3 /* FridgeSnapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeSnapApp.swift; sourceTree = "<group>"; };
+		49EEB653D58CD819F785BDDE /* FridgeSnap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FridgeSnap.entitlements; sourceTree = "<group>"; };
+		535C6DD2C0CF9100190CFC5C /* ImagePipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePipeline.swift; sourceTree = "<group>"; };
+		8C6019A30A58459BCEFD7097 /* FridgeSnap.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = FridgeSnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DAC99B61F1125FDDCC9BA29 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		98A11624F62EF84D4C74193B /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
+		B2264F7AB683ADE2675636BC /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		B4012DCCF4D8D1FA82D58D37 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		B60BE6CBC0462543FE556A5E /* FridgeSnapTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = FridgeSnapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA6519E4E1A94EFDECD0D9A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CB141590DC10FB59E567922E /* DTOs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTOs.swift; sourceTree = "<group>"; };
+		D99394DE601A299129565007 /* IngredientEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientEditor.swift; sourceTree = "<group>"; };
+		E5E7AF81B0E5D9C63EBFFF42 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		E6B1EDB379493D07215A2405 /* SmokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokeTests.swift; sourceTree = "<group>"; };
+		E7BC64899E0F0D733141C0FF /* LazinessSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazinessSelectorView.swift; sourceTree = "<group>"; };
+		E8E5FC452350C225AF08A630 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		EC1E70F6F4E8F8B20B464EA3 /* ScanHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanHomeView.swift; sourceTree = "<group>"; };
+		EE01650EE3BF520E42C7CFEF /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0DC83A5838E0E80AFC3997C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1FB3AABBE2FDC0CA47A5C67 /* RevenueCat in Frameworks */,
+				58F3676292D5CD2613C575D0 /* Supabase in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F57395688DDF0567E757B4B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3214CC7A7F5820953306A872 /* AppServices.swift */,
+				221BC693860B327B6ED46189 /* AuthService.swift */,
+				3AA9C834A0FD36EDDD7B11C8 /* GenerationService.swift */,
+				E8E5FC452350C225AF08A630 /* MockData.swift */,
+				11145528CD05E3BCFB9F9092 /* ScanService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4A28DCE133E6788454AF78BC /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				362BE55E01CAB732DB856560 /* CameraPicker.swift */,
+				535C6DD2C0CF9100190CFC5C /* ImagePipeline.swift */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		4F4B8A4892061C95E88225E0 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				B2264F7AB683ADE2675636BC /* SignInView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		632066359ABA1F29D0B7E981 /* FridgeSnap */ = {
+			isa = PBXGroup;
+			children = (
+				49EEB653D58CD819F785BDDE /* FridgeSnap.entitlements */,
+				CA6519E4E1A94EFDECD0D9A6 /* Info.plist */,
+				B14FFDCB197EE51D3FDEDB2F /* App */,
+				4F4B8A4892061C95E88225E0 /* Auth */,
+				A6CD528C8EDCF7C5C115D582 /* Generate */,
+				4A28DCE133E6788454AF78BC /* Media */,
+				F07BAFC709E2AEF01BFA93BC /* Models */,
+				775753389AC594C43D5A6734 /* Scan */,
+				3F57395688DDF0567E757B4B /* Services */,
+			);
+			path = FridgeSnap;
+			sourceTree = "<group>";
+		};
+		775753389AC594C43D5A6734 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				30113398DC5437DF2A6EFE4B /* IngredientReviewView.swift */,
+				2C5920B7B5B59E63103ADF79 /* ScanFlowModel.swift */,
+				EC1E70F6F4E8F8B20B464EA3 /* ScanHomeView.swift */,
+			);
+			path = Scan;
+			sourceTree = "<group>";
+		};
+		93D645B6DCF9B3E9DE1B4945 /* FridgeSnapTests */ = {
+			isa = PBXGroup;
+			children = (
+				3A5084C2876585032CF0ADFD /* CoreLoopTests.swift */,
+				E6B1EDB379493D07215A2405 /* SmokeTests.swift */,
+			);
+			path = FridgeSnapTests;
+			sourceTree = "<group>";
+		};
+		A6CD528C8EDCF7C5C115D582 /* Generate */ = {
+			isa = PBXGroup;
+			children = (
+				E7BC64899E0F0D733141C0FF /* LazinessSelectorView.swift */,
+				E5E7AF81B0E5D9C63EBFFF42 /* RecipeDetailView.swift */,
+				05C14C105FE7265FDFCBD79C /* RecipeResultsView.swift */,
+			);
+			path = Generate;
+			sourceTree = "<group>";
+		};
+		B14FFDCB197EE51D3FDEDB2F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8DAC99B61F1125FDDCC9BA29 /* AppConfig.swift */,
+				404DF757A27AC85A344F25D3 /* FridgeSnapApp.swift */,
+				EE01650EE3BF520E42C7CFEF /* RootTabView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B533BF844E78E1EB18ED9ED0 = {
+			isa = PBXGroup;
+			children = (
+				E9D9CCE4732A35292B6A03A6 /* ios */,
+				C2DA425644E1B7CAE55B03EF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C2DA425644E1B7CAE55B03EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8C6019A30A58459BCEFD7097 /* FridgeSnap.app */,
+				B60BE6CBC0462543FE556A5E /* FridgeSnapTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4F891E5CB0C4F95FF07E83C /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				B4012DCCF4D8D1FA82D58D37 /* PrivacyInfo.xcprivacy */,
+				98A11624F62EF84D4C74193B /* Shared.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		E9D9CCE4732A35292B6A03A6 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				E4F891E5CB0C4F95FF07E83C /* Config */,
+				632066359ABA1F29D0B7E981 /* FridgeSnap */,
+				93D645B6DCF9B3E9DE1B4945 /* FridgeSnapTests */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		F07BAFC709E2AEF01BFA93BC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CB141590DC10FB59E567922E /* DTOs.swift */,
+				D99394DE601A299129565007 /* IngredientEditor.swift */,
+				10D0DCC2BB41382FAA94259C /* LocalScan.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5F207D23703837FA3570A322 /* FridgeSnapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99632F21443639CF4F5F33AF /* Build configuration list for PBXNativeTarget "FridgeSnapTests" */;
+			buildPhases = (
+				A07E846843CD298E6BB65ABB /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C57B6A2877D7B303EFA09AE8 /* PBXTargetDependency */,
+			);
+			name = FridgeSnapTests;
+			packageProductDependencies = (
+			);
+			productName = FridgeSnapTests;
+			productReference = B60BE6CBC0462543FE556A5E /* FridgeSnapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C5366C41BB649947DE45A798 /* FridgeSnap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CA2846691D707148512F593 /* Build configuration list for PBXNativeTarget "FridgeSnap" */;
+			buildPhases = (
+				68ED9CFFDEA73954F2D8CA8B /* Sources */,
+				B2BC0D2F2550F4CEE02E98E5 /* Resources */,
+				0DC83A5838E0E80AFC3997C2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FridgeSnap;
+			packageProductDependencies = (
+				902CF1DBEAF972DC8BF74856 /* RevenueCat */,
+				4F7866F982B54C5BAF5A43AE /* Supabase */,
+			);
+			productName = FridgeSnap;
+			productReference = 8C6019A30A58459BCEFD7097 /* FridgeSnap.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		82A091FA775C6BB6BB23AC37 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					5F207D23703837FA3570A322 = {
+						ProvisioningStyle = Automatic;
+					};
+					C5366C41BB649947DE45A798 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B454EE1D601DE1E7F94F1B6D /* Build configuration list for PBXProject "FridgeSnap" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = B533BF844E78E1EB18ED9ED0;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F3D3E8AE463405531FE2F418 /* XCRemoteSwiftPackageReference "purchases-ios" */,
+				08BB421A2619FCB36177D51C /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = C2DA425644E1B7CAE55B03EF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C5366C41BB649947DE45A798 /* FridgeSnap */,
+				5F207D23703837FA3570A322 /* FridgeSnapTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B2BC0D2F2550F4CEE02E98E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B210EEDE022FC6B69BFBA78F /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		68ED9CFFDEA73954F2D8CA8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A786F4E9133447020032950D /* AppConfig.swift in Sources */,
+				1475C8B77CB302540077E51A /* AppServices.swift in Sources */,
+				011B574675D14CFDD40DF240 /* AuthService.swift in Sources */,
+				C75C9766BBCCA04DDE035B75 /* CameraPicker.swift in Sources */,
+				DD667BFBD423BD458E89BED0 /* DTOs.swift in Sources */,
+				FF12B1702723AF6CEDAD7CCC /* FridgeSnapApp.swift in Sources */,
+				82CF0FDEA12E57CBAFBE2649 /* GenerationService.swift in Sources */,
+				3FE918CDB98CFE465821E087 /* ImagePipeline.swift in Sources */,
+				2041902D1553B1E95DA73A09 /* IngredientEditor.swift in Sources */,
+				62EA640A1E203ED3E53BDBD5 /* IngredientReviewView.swift in Sources */,
+				A8488C86F791F639A45670B5 /* LazinessSelectorView.swift in Sources */,
+				FB15B260D702C4B8FCDE4DB8 /* LocalScan.swift in Sources */,
+				40744CA80E4CF8C04C9ACBC2 /* MockData.swift in Sources */,
+				96EB5FA6250AA40EEF6D8041 /* RecipeDetailView.swift in Sources */,
+				AFF76BCD1470647F7A35A8DD /* RecipeResultsView.swift in Sources */,
+				CD2250ACF59FE899D54A7EAE /* RootTabView.swift in Sources */,
+				2B3DD27EE6F07A35BB1FF5C5 /* ScanFlowModel.swift in Sources */,
+				096E73352B54EBE6496CB661 /* ScanHomeView.swift in Sources */,
+				3D20DB1DCE35ABFF1292B600 /* ScanService.swift in Sources */,
+				0FC05885CF6818432BFC07FC /* SignInView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A07E846843CD298E6BB65ABB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACB0FCCEE1310E9806CBACA7 /* CoreLoopTests.swift in Sources */,
+				56D411017874EC3C213CC430 /* SmokeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C57B6A2877D7B303EFA09AE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5366C41BB649947DE45A798 /* FridgeSnap */;
+			targetProxy = 81BE119B246CBD59C79F8FEE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3C1BF7B81B57B400DBF76FBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98A11624F62EF84D4C74193B /* Shared.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ios/FridgeSnap/FridgeSnap.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = ios/FridgeSnap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.usefridgesnap.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5F09BB8C13CDDD58F6CAF81C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.usefridgesnap.FridgeSnapTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FridgeSnap.app/FridgeSnap";
+			};
+			name = Debug;
+		};
+		74AE9C04F61E7E7D6EFA8112 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		9B2B353D006B5DC6A4588918 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		F50E1CCFB78E189759B8C128 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98A11624F62EF84D4C74193B /* Shared.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ios/FridgeSnap/FridgeSnap.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = ios/FridgeSnap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.usefridgesnap.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FAE7E8AC458FC0FA4FDF1934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.usefridgesnap.FridgeSnapTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FridgeSnap.app/FridgeSnap";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6CA2846691D707148512F593 /* Build configuration list for PBXNativeTarget "FridgeSnap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C1BF7B81B57B400DBF76FBD /* Debug */,
+				F50E1CCFB78E189759B8C128 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		99632F21443639CF4F5F33AF /* Build configuration list for PBXNativeTarget "FridgeSnapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F09BB8C13CDDD58F6CAF81C /* Debug */,
+				FAE7E8AC458FC0FA4FDF1934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B454EE1D601DE1E7F94F1B6D /* Build configuration list for PBXProject "FridgeSnap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74AE9C04F61E7E7D6EFA8112 /* Debug */,
+				9B2B353D006B5DC6A4588918 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		08BB421A2619FCB36177D51C /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		F3D3E8AE463405531FE2F418 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4F7866F982B54C5BAF5A43AE /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08BB421A2619FCB36177D51C /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+		902CF1DBEAF972DC8BF74856 /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3D3E8AE463405531FE2F418 /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = RevenueCat;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 82A091FA775C6BB6BB23AC37 /* Project object */;
+}

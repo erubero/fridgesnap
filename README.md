@@ -1,10 +1,10 @@
-# LazyChef
+# FridgeSnap
 
 [![CI](https://github.com/erubero/lazychef/actions/workflows/ci.yml/badge.svg)](https://github.com/erubero/lazychef/actions/workflows/ci.yml)
 
 Point your camera at your fridge. Pick how lazy you feel. Get a recipe you can actually make, with calories and macros.
 
-LazyChef is an iOS app for people who default to delivery. Photo recognition identifies the ingredients you already own, you choose one of three laziness levels (Lazy AF, Some Effort, Chef Mode), and it generates three recipes that use only what you have. A full-screen Cook Mode with built-in timers walks you through each step.
+FridgeSnap is an iOS app for people who default to delivery. Photo recognition identifies the ingredients you already own, you choose one of three laziness levels (Lazy AF, Some Effort, Chef Mode), and it generates three recipes that use only what you have. A full-screen Cook Mode with built-in timers walks you through each step.
 
 Full product spec: [lazychef-spec.md](lazychef-spec.md)
 
@@ -31,8 +31,8 @@ iOS app (SwiftUI)                    Supabase
 | Path | What it is |
 |---|---|
 | `project.yml` | XcodeGen definition. The `.xcodeproj` is generated; never edit it by hand. |
-| `ios/LazyChef/` | SwiftUI app. iOS 17+, iPhone only, MVVM, SwiftData for local persistence. |
-| `ios/LazyChefTests/` | XCTest suite. Business logic is Foundation-only so it runs in the Simulator. |
+| `ios/FridgeSnap/` | SwiftUI app. iOS 17+, iPhone only, MVVM, SwiftData for local persistence. |
+| `ios/FridgeSnapTests/` | XCTest suite. Business logic is Foundation-only so it runs in the Simulator. |
 | `ios/Config/` | Build configuration. Secrets live in a gitignored `Secrets.xcconfig`. |
 | `supabase/migrations/` | Postgres schema, row level security, storage buckets. |
 | `supabase/functions/` | Deno edge functions: `scan`, `generate`, `cleanup-scan-images`. |
@@ -48,7 +48,7 @@ Requirements: Xcode 16+, [XcodeGen](https://github.com/yonaskolb/XcodeGen) (`bre
 xcodegen generate
 
 # Build and test (no secrets required; mock services keep the app fully usable)
-xcodebuild test -scheme LazyChef -destination 'platform=iOS Simulator,name=iPhone 17 Pro'
+xcodebuild test -scheme FridgeSnap -destination 'platform=iOS Simulator,name=iPhone 17 Pro'
 ```
 
 To run against the real backend, copy `ios/Config/Secrets.xcconfig.example` to `ios/Config/Secrets.xcconfig` and fill in your values. Without it the app builds and runs end to end on fixture data.

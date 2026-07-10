@@ -1,22 +1,42 @@
 import SwiftUI
 
-/// Tab bar per spec section 6: Scan (primary), My Recipes, Community, Settings.
-/// The tab contents are placeholders until their milestones land
-/// (M2 scan flow, M3 My Recipes, M5 community, M6 settings).
+// Tab bar per spec section 6: Scan (primary), My Recipes, Community, Settings.
+// My Recipes lands in M3, Community in M5, Settings in M6.
 struct RootTabView: View {
+    let services: AppServices
+    @State private var scanFlow: ScanFlowModel
+    @State private var checkedSession = false
+
+    init(services: AppServices) {
+        self.services = services
+        _scanFlow = State(initialValue: ScanFlowModel(services: services))
+    }
+
     var body: some View {
+        Group {
+            if !checkedSession {
+                ProgressView()
+                    .task {
+                        await services.auth.restoreSession()
+                        checkedSession = true
+                    }
+            } else if !services.auth.isSignedIn {
+                SignInView(auth: services.auth)
+            } else {
+                tabs
+            }
+        }
+    }
+
+    private var tabs: some View {
         TabView {
-            PlaceholderScreen(
-                title: "Scan",
-                systemImage: "camera.fill",
-                message: "Point your camera at the fridge. Coming in the next build."
-            )
-            .tabItem { Label("Scan", systemImage: "camera.fill") }
+            ScanHomeView(model: scanFlow)
+                .tabItem { Label("Scan", systemImage: "camera.fill") }
 
             PlaceholderScreen(
                 title: "My Recipes",
                 systemImage: "book.fill",
-                message: "Saved and cooked recipes will live here."
+                message: "Saved and cooked recipes land in the next build."
             )
             .tabItem { Label("My Recipes", systemImage: "book.fill") }
 
@@ -48,8 +68,4 @@ private struct PlaceholderScreen: View {
                 .navigationTitle(title)
         }
     }
-}
-
-#Preview {
-    RootTabView()
 }

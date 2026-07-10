@@ -1,5 +1,5 @@
 import XCTest
-@testable import LazyChef
+@testable import FridgeSnap
 
 final class SmokeTests: XCTestCase {
     func testKeylessCheckoutIsNotConfigured() {

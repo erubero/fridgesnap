@@ -1,14 +1,14 @@
-# LazyChef
+# FridgeSnap
 
 iOS app: photograph your fridge, photo recognition identifies the ingredients, pick a laziness level (Lazy AF / Some Effort / Chef Mode), get 3 recipes with calories and macros. $4.99/month subscription, 7-day trial, 3 lifetime free scans. Full product spec: `lazychef-spec.md` (canonical JSON schemas in sections 4 and 5).
 
-Working title. The name is NOT final; bundle id `com.lazychefapp.app` and product id `lazychef_monthly_499` are placeholders. Do not create Apple Developer / App Store Connect / RevenueCat / domain resources until the owner locks the name.
+The name FridgeSnap is FINAL (2026-07-09). Domain: usefridgesnap.com. Bundle id `com.usefridgesnap.app`, subscription product id `fridgesnap_monthly_499`. Apple Developer / App Store Connect / RevenueCat setup is now unblocked. The product spec keeps its historical filename `lazychef-spec.md`; the GitHub repo is still erubero/lazychef until the owner renames it.
 
 ## Layout
 
 - `project.yml`: XcodeGen source of truth. The `.xcodeproj` is a generated artifact; never edit the pbxproj by hand. Regenerate: `xcodegen generate` (Terminal, repo root).
-- `ios/LazyChef/`: SwiftUI app (iOS 17+, iPhone only, portrait, MVVM, SwiftData local persistence).
-- `ios/LazyChefTests/`: XCTest. Business logic stays Foundation-only so it runs in Simulator.
+- `ios/FridgeSnap/`: SwiftUI app (iOS 17+, iPhone only, portrait, MVVM, SwiftData local persistence).
+- `ios/FridgeSnapTests/`: XCTest. Business logic stays Foundation-only so it runs in Simulator.
 - `ios/Config/`: `Shared.xcconfig` (committed, empty keys) includes gitignored `Secrets.xcconfig` (team id, Supabase URL/anon key, RevenueCat public key). Copy `Secrets.xcconfig.example` to start.
 - `supabase/migrations/`: SQL, `YYYYMMDDNNNNNN_snake_case.sql`, lowercase keywords, split by concern.
 - `supabase/functions/`: Deno edge functions. `scan` and `generate` proxy the Anthropic API; the key lives only in Supabase secrets, never in the app.
@@ -19,8 +19,8 @@ Working title. The name is NOT final; bundle id `com.lazychefapp.app` and produc
 ## Commands
 
 - Generate project: `xcodegen generate` (Terminal, repo root)
-- Build keyless: `xcodebuild build -scheme LazyChef -destination 'platform=iOS Simulator,name=iPhone 17 Pro'`
-- Tests: `xcodebuild test -scheme LazyChef -destination 'platform=iOS Simulator,name=iPhone 17 Pro'`
+- Build keyless: `xcodebuild build -scheme FridgeSnap -destination 'platform=iOS Simulator,name=iPhone 17 Pro'`
+- Tests: `xcodebuild test -scheme FridgeSnap -destination 'platform=iOS Simulator,name=iPhone 17 Pro'`
 
 ## Rules
 
@@ -43,7 +43,9 @@ Working title. The name is NOT final; bundle id `com.lazychefapp.app` and produc
 ## Milestone ledger
 
 - [x] M1 scaffold + backend (this session, 2026-07-09): repo scaffold, migrations, `scan`/`generate`/`cleanup-scan-images` functions. Owner setup steps pending (Supabase project, secrets, deploys).
-- [ ] M2 core loop: Sign in with Apple, camera + scan flow, ingredient review, laziness selector, results, recipe detail.
+- [x] M2 core loop (2026-07-09): Sign in with Apple (hashed nonce, gated to real backend), camera + PhotosPicker capture, ImagePipeline (1568px JPEG 0.8), ingredient review (? chips, one-tap remove, manual add, use-soon badges), scan history (SwiftData, last 10), laziness selector, results + regenerate, recipe detail. Rescue-aware generation: perishability_days flows to /generate and the prompt prefers expiring ingredients. 16 tests green. Real-device E2E pending owner setup (Supabase + Apple App ID, blocked on final name).
+- [x] Rename to FridgeSnap (2026-07-09): bundle com.usefridgesnap.app, product fridgesnap_monthly_499, worker "fridgesnap", all copy. GitHub repo still erubero/lazychef until owner renames it.
+- [x] Freshness upgrade (2026-07-09, FruitCue concepts): scan schema + prompt add ripeness (very_firm/slightly_firm/ready/very_soft/spoiled/not_applicable, judged from VISIBLE state) and storage_tip; client shows due labels ("use today" / "due Friday") anchored to scan date, eat-me-first sorting, semantic freshness colors (amber use-soon, crimson spoiled, separate from brand red). Old scans without ripeness still decode (optional fields).
 - [ ] M3 Cook Mode, post-cook sheet, My Recipes, analytics events.
 - [ ] M4 monetization: paywall, gating, onboarding, rc-sync. Blocked on final app name.
 - [ ] M5 community: feed, publish + moderation, report/block, Chef's Picks, nightly popular_combos.
