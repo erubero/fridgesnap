@@ -2,7 +2,7 @@
 
 iOS app: photograph your fridge, photo recognition identifies the ingredients, pick a laziness level (Lazy AF / Some Effort / Chef Mode), get 3 recipes with calories and macros. $4.99/month subscription, 7-day trial, 3 lifetime free scans. Full product spec: `lazychef-spec.md` (canonical JSON schemas in sections 4 and 5).
 
-The name FridgeSnap is FINAL (2026-07-09). Domain: usefridgesnap.com. Bundle id `com.usefridgesnap.app`, subscription product id `fridgesnap_monthly_499`. Apple Developer / App Store Connect / RevenueCat setup is now unblocked. The product spec keeps its historical filename `lazychef-spec.md`; the GitHub repo is still erubero/lazychef until the owner renames it.
+The name FridgeSnap is FINAL (2026-07-09). Domain: usefridgesnap.com. Bundle id `com.usefridgesnap.app`. Pricing (owner-set 2026-07-09): $4.99/month AND $40/year, both with 7-day trial; product ids `fridgesnap_monthly_499` + annual id to define in M4. Support email: info@prrenovatio.com. Apple Developer / App Store Connect / RevenueCat setup is now unblocked. The product spec keeps its historical filename `lazychef-spec.md`; the GitHub repo is still erubero/lazychef until the owner renames it. Landing FAQ section was removed at owner request 2026-07-09; do not re-add.
 
 ## Layout
 
